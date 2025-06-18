@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --color-black: #0D0D0D;
+  --color-white: #FFFFFF;
+  --color-gray: #CCCCCC;
+  --color-gold: #FFB300;
+  --color-gold-light: #FFD54F;
+
+  --background: var(--color-black);
+  --foreground: var(--color-white);
+  --text-primary: var(--color-white);
+  --text-secondary: var(--color-gray);
+  --accent: var(--color-gold);
+  --hover: var(--color-gold-light);
+
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent);
+  --color-hover: var(--hover)
+  --font-poppins: var(--font-poppins);
+}
+
+@keyframes click {
+    50%{
+      transform: translate(3px, 3px);
+    }
+
+    100%{
+      transform: translate(0px, 0px);
+    }
+}
+
+@keyframes mount {
+  from{
+    transform: translate(0px, -60px);
+  }
+
+  to{
+    transform: translate(0px, 0px);
+  }
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+@layer{
+  .tooltip{
+    clip-path: polygon(76% 10%, 88% 0, 100% 11%, 100% 82%, 0 82%, 0 10%);;
+    @apply bg-amber-100
+  }
+
+  .shadow-sm{
+    box-shadow: 0 0 10px rgba(230, 218, 218, 0.5);
+  }
+
+  .shadow-md{
+    box-shadow: 0 0 20px rgba(230, 218, 218, 0.5);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .shadow-md:focus{
+    box-shadow: 0 0 30px rgba(230, 218, 218, 0.7);
+  }
+
+  .shadow-x{
+    box-shadow: 0 0 30px rgba(230, 218, 218, 0.7);
+  }
+
+  .click-animation:active{
+    animation: click 0.2s ease;
+  }
+
+  .mount-animation{
+    animation: mount 0.5s ease forwards;
+  }
+}
