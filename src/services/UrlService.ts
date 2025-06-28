@@ -3,7 +3,7 @@ import axios from "axios";
 const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export async function shortenUrl(url: string){
-    console.log(url);
+    console.log(backendUrl);
 
     const response = await axios.post(
         backendUrl + "/shortenUrl",
