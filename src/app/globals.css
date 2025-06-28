@@ -6,6 +6,9 @@
   --color-gray: #CCCCCC;
   --color-gold: #FFB300;
   --color-gold-light: #FFD54F;
+  --toast-success-bg: #00C853;    
+  --toast-success-text: #FFFFFF;
+
 
   --background: var(--color-black);
   --foreground: var(--color-white);
@@ -23,8 +26,11 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-accent: var(--accent);
-  --color-hover: var(--hover)
-  --font-poppins: var(--font-poppins);
+  --color-hover: var(--hover);
+  --color-toast-suc-bg: var(--toast-success-bg);    /* Emerald Green */
+  --color-toast-suc-text: #FFFFFF;
+  --color-toast-err-bg: #D50000;      /* Strong Crimson Red */
+  --color-toast-err-text: #FFFFFF;
 }
 
 @keyframes click {
@@ -40,10 +46,24 @@
 @keyframes mount {
   from{
     transform: translate(0px, -60px);
+    opacity: 0.2;
   }
 
   to{
     transform: translate(0px, 0px);
+    opacity: 1;
+  }
+}
+
+@keyframes mount-left {
+  from{
+    transform: translate(-100px, 0px);
+    opacity: 0.2;
+  }
+
+  to{
+    transform: translate(0, 0);
+    opacity: 1;
   }
 }
 
@@ -85,5 +105,13 @@ body {
 
   .mount-animation{
     animation: mount 0.5s ease forwards;
+  }
+
+  .mount-animation-left{
+    animation: mount-left 0.5s ease forwards;
+  }
+
+  .toast-toggle{
+    @apply bottom-[15%]
   }
 }
