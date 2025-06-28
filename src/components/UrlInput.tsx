@@ -1,7 +1,6 @@
 "use client";
 
-import React, { act, useCallback, useState } from 'react';
-import axios from 'axios';
+import React, { useCallback, useState } from 'react';
 import { shortenUrl } from '@/services/UrlService';
 import UrlDisplayer from './UrlDisplayer';
 import { useToast } from '@/context/ToastProvider';
@@ -50,7 +49,7 @@ const UrlInput = () => {
         }
 
 
-    }, [])
+    }, [toast])
 
     return (
         <>
