@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from 'react'
 
 const Toast = ({toast}: {toast: ToastType | null}) => {
 
-    const interval = useRef<any>(null);
+    const interval = useRef<ReturnType<typeof setInterval> | null>(null);
 
     useEffect(() => {
         if (toast != null){
